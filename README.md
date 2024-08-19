@@ -42,3 +42,10 @@ cp -p /mingw32/bin/libwinpthread*.dll /mdbtools-win/
 ```
 
 Copy to where you want and use for good.
+
+
+
+./mdb-json WSUJ.MDB tab50 > raw-tab50.txt ; sed '1s/^/[/;$!s/$/,/;$s/$/]/' raw-tab50.txt > raw-tab50.json
+
+
+./mdb-json WSUJ.MDB tab71 | iconv -f utf-8 -t cp1252 | iconv -f BIG5-2003 -t utf-8 > raw-tab71.txt ; sed '1s/^/[/;$!s/$/,/;$s/$/]/' raw-tab71.txt > raw-tab71.json
